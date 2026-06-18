@@ -1,0 +1,29 @@
+import random
+
+# Загадываем число от 1 до 100
+secret_number = random.randint(1, 100)
+attempts = 0
+
+print(&quot;Привет! Я загадал число от 1 до 100. Попробуй угадать!&quot;)
+
+# Запускаем бесконечный цикл, пока игрок не угадает
+while True:
+    # Просим пользователя ввести число
+    user_input = input(&quot;Введи свой вариант: &quot;)
+    
+    # Проверяем, что ввели именно число, а не буквы
+    if not user_input.isdigit():
+        print(&quot;Пожалуйста, введи именно целое число!&quot;)
+        continue
+        
+    guess = int(user_input)
+    attempts += 1 # Считаем попытку
+    
+    # Проверяем условия игры
+    if guess &lt; secret_number:
+        print(&quot;Мало! Попробуй число побольше.&quot;)
+    elif guess &gt; secret_number:
+        print(&quot;Много! Попробуй число поменьше.&quot;)
+    else:
+        print(f&quot;Поздравляю! Ты угадал число {secret_number} за {attempts} попыток!&quot;)
+        break # Выходим из цикла, игра окончена
