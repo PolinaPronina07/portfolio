@@ -47,4 +47,9 @@ def calculate_total(price, quantity, card_type):
      }
  }
      
-     
+     if card_type = "Gold"
+        return calculate_total * 0.85
+
+
+     if card_type = "Silver" 
+        return calculate_total * 0.93
